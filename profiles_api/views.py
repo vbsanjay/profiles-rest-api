@@ -18,10 +18,10 @@ class HelloApiView(APIView):
             "is similar to traditional django, but specifically inded to use for api",
         ]
 
-        return Response({'messgae': 'Hello!', 'an_apiview': an_apiview})
+        return Response({'message': 'Hello!', 'an_apiview': an_apiview})
 
     def post(self, request):
-        """Create a hello message with out name"""
+        """Create a hello message with our name"""
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
@@ -50,7 +50,7 @@ class HelloViewSet(viewsets.ViewSet):
     serializer_class = serializers.HelloSerializer
 
     def list(self, request):
-        """Return a hello messsgae"""
+        """Return a hello message"""
 
         a_viewset = [
             'User actions (list, create, retrieve, update, partial_update)',
